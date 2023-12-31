@@ -35,7 +35,7 @@ app.post('/scan', json(), async (req, res) => {
         return res.json(vulnerablePackages)
     } catch(e) {
         res.statusCode = e.code || StatusCodes.INTERNAL_SERVER_ERROR
-        res.send(e.message)
+        res.send(e.message || 'an error occured')
     }
 })
 
